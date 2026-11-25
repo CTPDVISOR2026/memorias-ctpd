@@ -13,7 +13,7 @@ Enlaces directos que conviene compartir:
 | Página principal (siempre muestra el número más reciente) | `https://ctpdvisor2026.github.io/memorias-ctpd/` |
 | Un número específico | `https://ctpdvisor2026.github.io/memorias-ctpd/#numero-1` |
 | Archivo de todos los números | `https://ctpdvisor2026.github.io/memorias-ctpd/#archivo` |
-| PDF del número 1 | `https://ctpdvisor2026.github.io/memorias-ctpd/numeros/2026-n01/memorias-ctpd-n01.pdf` |
+| PDF del número 1 | `https://ctpdvisor2026.github.io/memorias-ctpd/numeros/2026-n01/memorias-ctpd-n01.pdf.pdf` |
 
 ---
 
@@ -45,6 +45,11 @@ numeros/2026-n01/           ← una carpeta por número (PDF + portada)
 
 ## Publicar un número nuevo (cada edición)
 
+> ⚠️ **Al renombrar el PDF en Windows**, escriba solo `memorias-ctpd-n02` (sin `.pdf`): Windows oculta la extensión
+> y si la escribe queda `memorias-ctpd-n02.pdf.pdf`. Antes de confirmar en GitHub, revise que el nombre que aparece
+> en la lista termine en un solo `.pdf`. El valor de `pdf:` en `datos/numeros.js` debe coincidir exactamente con ese nombre.
+> (El Número 1 quedó publicado como `memorias-ctpd-n01.pdf.pdf` y el catálogo ya apunta a ese nombre; no lo cambie.)
+
 1. En el repositorio, **Add file → Upload files** y suba la carpeta nueva, por ejemplo
    `numeros/2028-n02/` con `memorias-ctpd-n02.pdf` y `portada.jpg`.
    (Portada: JPG de unos 600 px de ancho. Puede exportar la primera página del PDF como imagen.)
@@ -52,7 +57,7 @@ numeros/2026-n01/           ← una carpeta por número (PDF + portada)
 3. Copie el bloque completo del número 1 (desde `{` hasta `},`) y péguelo **encima**, justo después de `window.NUMEROS = [`.
    Cambie: `numero`, `anio`, `fecha`, `titulo`, `subtitulo`, `periodo`, `pdf`, `portada`, `paginas`, `peso`,
    `resumen`, `editorial`, `equipo` y la tabla de `contenido` (con la página del PDF donde empieza cada sección).
-4. **Commit changes**. En 1–2 minutos:
+4. **Commit changes**. En 1–2 minutos (la página siempre carga el catálogo más reciente, sin problemas de caché):
    - la página principal mostrará el número nuevo como **Número actual**;
    - el anterior pasará solo al **Archivo** y conservará su enlace `#numero-1`.
 
