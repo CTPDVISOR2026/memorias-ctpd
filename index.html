@@ -258,9 +258,8 @@ footer.pie a{color:var(--green-light)}
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="datos/numeros.js"></script>
 <script>
-{
+function iniciarSitio(){
 const P = window.PUBLICACION || {}, N = (window.NUMEROS || []).slice();
 const cur = N[0];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -373,6 +372,14 @@ renderStatic();
 route();
 window.addEventListener('hashchange', route);
 }
+// Carga el catálogo siempre actualizado (evita que el navegador muestre una versión vieja)
+(function(){
+  var s=document.createElement('script');
+  s.src='datos/numeros.js?v='+Date.now();
+  s.onload=iniciarSitio;
+  s.onerror=function(){var v=document.getElementById('v-numero');v.innerHTML='<div class="card">No se pudo cargar el catálogo de números. Recargue la página.</div>';v.classList.add('on')};
+  document.head.appendChild(s);
+})();
 </script>
 </body>
 </html>
