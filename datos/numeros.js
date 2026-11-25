@@ -35,7 +35,7 @@ window.NUMEROS = [
     titulo: "Voces diversas en la planeación participativa: memorias",
     subtitulo: "Planeación, participación ciudadana y perspectivas de Bogotá, 2019–2026",
     periodo: "2019–2026",
-    pdf: "numeros/2026-n01/memorias-ctpd-n01.pdf",
+    pdf: "numeros/2026-n01/memorias-ctpd-n01.pdf.pdf",
     portada: "numeros/2026-n01/portada.jpg",
     paginas: 332,
     peso: "16,9 MB",
